@@ -91,7 +91,7 @@ static	char	**fill(t_struct *size, char *str, char c, short b)
 		words[++i] = (char *) malloc(sizeof(char) * (size->data + 1));
 		!words[i] && error(words, i);
 		j = 0;
-		while (*str != c)
+		while (*str && *str != c)
 			words[i][j++] = *str++;
 		words[i][j] = '\0';
 		if (*str)
