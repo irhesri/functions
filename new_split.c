@@ -96,7 +96,7 @@ static	char	**fill(t_struct *size, char *str, char c, short b)
 		words[i][j] = '\0';
 		if (*str)
 			str++;
-		while (!b && *str == c)
+		while (!b && *str && *str == c)
 			str++;
 		size = size->next;
 	}
