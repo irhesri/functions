@@ -108,6 +108,7 @@ static	char	**fill(t_struct *size, char *str, char c, short b)
 char	**ft_split(char *str, char c, short b/*, int *len*/)
 {
 	t_struct	*size;
+	t_struct	*tmp;
 	char		**words;
 
 	if (!str)
@@ -117,5 +118,11 @@ char	**ft_split(char *str, char c, short b/*, int *len*/)
 	size = get_size(str, c, b);
 	words = fill(size, str, c, b);
     // (*len) = size->data;
+	while (size)
+	{
+		tmp = size->next;
+		free (size);
+		size = tmp;
+	}
 	return (words);
 }
