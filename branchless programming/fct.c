@@ -17,6 +17,7 @@ int	absolute_value(int a)
 }
 
 //	WITH NO COMPARISON OPERATORS
+//	POSITIVE NUMBERS
 int	_min(int a, int b)
 {
 	int	min;
@@ -47,14 +48,16 @@ int	_max(int a, int b)
 
 int	_absolute_value(int a)
 {
-	int	b;
-	int	abs;
+	long long	b;
+	long long	c;
+	int		abs;
 
 	b = a;
+	c = a;
 	abs = 0;
-	while (a && b)
+	while (c && b)
 	{
-		a--;
+		c--;
 		b++;
 		abs++;
 	}
